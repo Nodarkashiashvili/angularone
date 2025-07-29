@@ -1,0 +1,21 @@
+<nav>
+    <ul>
+        <li  *ngIf="!showMobileMenu"><a href="">home</a></li>
+        <li  *ngIf="!showMobileMenu"><a href="">about</a></li>
+        <li  *ngIf="!showMobileMenu"><a href="">servis</a></li>
+    </ul>
+    <div class="burger" (click)="showHidemenu()">
+    <div class="liner"></div>
+    <div class="liner"></div>
+    <div class="liner"></div>
+</div>
+</nav>
+<div class="mobilemenu" *ngIf="showMobileMenu">
+        <ul>
+        <li><a href="">home</a></li>
+        <li><a href="">about</a></li>
+        <li><a href="">servis</a></li>
+    </ul>
+</div>
+
+
