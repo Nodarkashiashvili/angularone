@@ -4,16 +4,18 @@
 
 
 
-<main>
+<!-- <main>
   <h2 class="text90"[ngStyle]='colorTitle'>{{title}}</h2>
   <app-home1></app-home1>
   <img [src]="imgUrl" [width]="imgWith">
   <button [disabled]="isActive" (click)="show()">ok</button>
 
   <button (click)="change()">change title</button>
+</main> -->
+
+<main>
+  <router-outlet></router-outlet>
 </main>
-
-
 
 <footer>
 <app-footer></app-footer>

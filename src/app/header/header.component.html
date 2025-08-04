@@ -1,8 +1,9 @@
 <nav>
     <ul>
-        <li  *ngIf="!showMobileMenu"><a href="">home</a></li>
-        <li  *ngIf="!showMobileMenu"><a href="">about</a></li>
-        <li  *ngIf="!showMobileMenu"><a href="">servis</a></li>
+        <li  *ngIf="!showMobileMenu"><a routerLink="/home" [routerLinkActive]="active">home</a></li>
+        <li  *ngIf="!showMobileMenu"><a routerLink="/about" [routerLinkActive]="active">Rooms</a></li>
+        <li  *ngIf="!showMobileMenu"><a routerLink="/contact"[routerLinkActive]="active">Hotels</a></li>
+        <li  *ngIf="!showMobileMenu"><a routerLink="/booked"[routerLinkActive]="active">Booked rooms</a></li>
     </ul>
     <div class="burger" (click)="showHidemenu()">
     <div class="liner"></div>
@@ -12,9 +13,10 @@
 </nav>
 <div class="mobilemenu" *ngIf="showMobileMenu">
         <ul>
-        <li><a href="">home</a></li>
-        <li><a href="">about</a></li>
-        <li><a href="">servis</a></li>
+        <li><a routerLink="/home" >home</a></li>
+        <li><a routerLink="/about" >Rooms</a></li>
+        <li><a routerLink="/contact">Hotels</a></li>
+        <li><a routerLink="/booked">Booked rooms</a></li>
     </ul>
 </div>
 
