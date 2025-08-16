@@ -74,7 +74,7 @@ productArr : Prodacts []=[
 ]
 
 showProduct(){
-  this.showCardc = true
+  this.showCardc? this.showCardc=false: this.showCardc=true
 }
 
 
