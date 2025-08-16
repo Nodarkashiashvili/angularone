@@ -1,1 +1,42 @@
-<p>contact works!</p>
+<p>hotelss!</p>
+
+
+
+<form #myForms="ngForm">
+    <div class="errormessage" *ngIf="userNameControl.errors && userNameControl.touched">
+        <p *ngIf="userNameControl.errors['requarired']">name requarired</p>
+        <p *ngIf="userNameControl.errors['pattern']">only letters</p>
+    </div>
+    <input type="text" [(ngModel)]='userName' (ngModelChange)="liveSearch()" required #userNameControl="ngModel"
+        pattern="^[ა-ჰa-zA-Z0-9]+$" name="userName" />
+
+
+
+    <button [disabled]="myForms.invalid" (click)="save()"> save</button>
+</form>
+<p>{{userName}}</p>
+<h3>{{showUserName}}</h3>
+
+
+
+<input type="text" [(ngModel)]="userOject.userName">
+<input type="number" [(ngModel)]="userOject.phone">
+<input type="number" [(ngModel)]="userOject.age">
+<input type="email" [(ngModel)]="userOject.email">
+<input type="text" [(ngModel)]="userOject.password">
+<input type="text" [(ngModel)]="userOject.imgUrl">
+<input type="gender" [(ngModel)]="userOject.gender">
+
+
+<button class="btn btn-primary" (click)="saveObject()">save obj</button>
+
+
+<div class="card" style="width: 18rem;" *ngFor="let user of userArr">
+    <img src="{{userOject.imgUrl}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{user.userName}}</h5>
+        <p class="card-text">{{user.email}}</p>
+        <p class="card-text">{{user.age}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
