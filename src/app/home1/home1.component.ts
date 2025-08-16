@@ -2,16 +2,22 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Category, Prodacts } from '../Models/products';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home1',
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule,CommonModule,FormsModule],
   templateUrl: './home1.component.html',
   styleUrl: './home1.component.scss'
 })
 export class Home1Component {
 name = 'saxeli'
 showCardc = false;
+btnchange = 'sort As'
+search = '';
+filterArr : Prodacts[] =[];
+isFilterd = false;
+
 
 // fun(){
 //   console.log('hi')
@@ -78,5 +84,14 @@ showProduct(){
 }
 
 
+sort(){
+this.btnchange == 'sort As' ? this.btnchange = 'sort Des': this.btnchange = 'sort As'
+this.btnchange == 'sort As' ? this.productArr = this.productArr.sort((a,b)=>a.price - b.price)
+: this.productArr = this.productArr.sort((a,b)=>b.price - a.price)
 
+}
+searchtitle(){
+  this.isFilterd= true;
+  this.productArr=this.productArr.filter(el => el.title.includes(this.search))
+}
 }
