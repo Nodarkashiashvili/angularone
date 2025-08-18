@@ -12,11 +12,22 @@
 
 <div *ngIf="showCardc" class="conteiner">
     <div class="btns">
-        <input placeholder="Live search" type="text"[(ngModel)]='search' (ngMoledCange)="searchtitle()">
+        <input placeholder="Live search" type="text"[(ngModel)]='search' (ngModelChange)="searchtitle()">
         <button class="btn009" (click)="sort()">{{btnchange}}</button>
     </div>
-<div *ngIf="!isFilterd" class="conteiner008">
-    <div class="card" style="width: 18rem;" *ngFor='let el of productArr' >
+<div  class="conteiner008"  *ngIf="!isFilterd">
+    <div class="card" style="width: 18rem;" *ngFor='let el of productArr'>
+  <img [src]="el.image" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{el.title}}</h5>
+     <h5 class="card-title">{{el.price}}</h5>
+    <p class="card-text">{{el.description}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+<div  class="conteiner008" *ngIf="isFilterd">
+    <div class="card" style="width: 18rem;" *ngFor='let el of filterArr' >
   <img [src]="el.image" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{el.title}}</h5>
