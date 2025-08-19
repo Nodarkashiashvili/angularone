@@ -90,8 +90,15 @@ this.btnchange == 'sort As' ? this.productArr = this.productArr.sort((a,b)=>a.pr
 : this.productArr = this.productArr.sort((a,b)=>b.price - a.price)
 
 }
+resetiltr(){
+this.isFilterd=false;
+// this.filterArr = [];
+this.search=''
+}
 searchtitle(){
   this.isFilterd= true;
   this.filterArr=this.productArr.filter(el => el.title.includes(this.search))
 }
+
+
 }

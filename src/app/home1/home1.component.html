@@ -14,6 +14,7 @@
     <div class="btns">
         <input placeholder="Live search" type="text"[(ngModel)]='search' (ngModelChange)="searchtitle()">
         <button class="btn009" (click)="sort()">{{btnchange}}</button>
+        <button (click)="resetiltr()">reset</button>
     </div>
 <div  class="conteiner008"  *ngIf="!isFilterd">
     <div class="card" style="width: 18rem;" *ngFor='let el of productArr'>
