@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { Category, Prodacts } from '../Models/products';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgGSCommonFunctionService } from '../services/ng-g-s-common-function.service';
 
 @Component({
   selector: 'app-home1',
@@ -11,6 +12,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './home1.component.scss'
 })
 export class Home1Component {
+  constructor(private commonFun : NgGSCommonFunctionService){
+
+  }
 name = 'saxeli'
 showCardc = false;
 btnchange = 'sort As'
@@ -81,6 +85,8 @@ productArr : Prodacts []=[
 
 showProduct(){
   this.showCardc? this.showCardc=false: this.showCardc=true
+  this.commonFun.print()
+
 }
 
 

@@ -77,7 +77,7 @@ export const routes: Routes = [
         
     },
     {
-        path:'detalis/:id',
+        path:'detalis/:id/:name',
         loadComponent:() => import('./home1/detalis/detalis.component').then(v => v.DetalisComponent)
 
 
